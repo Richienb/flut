@@ -1,0 +1,3 @@
+var typedoc = typedoc || {};
+            typedoc.search = typedoc.search || {};
+            typedoc.search.data = {"kinds":{"128":"Class","2048":"Method"},"rows":[{"id":0,"kind":128,"name":"Flut","url":"classes/flut.html","classes":"tsd-kind-class"},{"id":1,"kind":2048,"name":"int","url":"classes/flut.html#int","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Flut"},{"id":2,"kind":2048,"name":"dec","url":"classes/flut.html#dec","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Flut"},{"id":3,"kind":2048,"name":"item","url":"classes/flut.html#item","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Flut"},{"id":4,"kind":2048,"name":"bool","url":"classes/flut.html#bool","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Flut"}]};
