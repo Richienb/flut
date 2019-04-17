@@ -1,0 +1,21 @@
+{
+    "name": "flut",
+    "description": "A random number generator.",
+    "keywords": ["random", "randomize", "integer", "decimal", "array", "math"],
+    "version": "0.0.0",
+    "main": "dist/index.js",
+    "repository": "https://github.com/Richienb/flut.git",
+    "author": "Richie Bendall <richiebendall@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build:js": "tsc",
+        "build:min": "uglifyjs --source-map --comments --output dist/index.min.js dist/index.js ",
+        "build:docs": "typedoc --out ./docs --mode file ./src",
+        "build": "yarn build:js && yarn build:min && yarn build:docs"
+    },
+    "devDependencies": {
+        "typedoc": "^0.14.2",
+        "typescript": "^3.4.3",
+        "uglify-js": "^3.5.4"
+    }
+}

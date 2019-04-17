@@ -24,36 +24,58 @@
  * SOFTWARE.
  */
 
+/**
+ * A random number generator.
+ * @class
+ *
+ * Initialisation:
+ * ```
+ * Flut = new Flut()
+ * ```
+ */
 export class Flut {
-    int(min?: number, max?: number, bias: boolean = false) {
-        if (max === void 0) { max = min; }
-        if (min === void 0) { min = 0; }
+    /**
+    * Generate a random integer.
+    * @method
+    * @param {number} [min=0] - The minimum number.
+    * @param {number} [max=min] - The maximum number.
+    * @param {boolean} [bias=false] - An optional, slot-machine style bias towards the minimum number.
+    * @returns {number} A number between min and max.
+    */
+    public int(min: number = 0, max: number = min, bias: boolean = false): number {
         if (bias) return Math.floor(Math.abs(Math.random() - Math.random()) * (1 + max - min) + min)
         return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 
-    dec(min?: number, max?: number, places: number = 15, bias: boolean = false) {
-        if (max === void 0) { max = min; }
-        if (min === void 0) { min = 0; }
+    /**
+    * Generate a random decimal.
+    * @method
+    * @param {number} [min=0] - The minimum number.
+    * @param {number} [max=min] - The maximum number.
+    * @param {boolean} [bias=false] - An optional, slot-machine style bias towards the minimum number.
+    * @returns {number} A number between min and max.
+    */
+    public dec(min: number = 0, max: number = min, bias: boolean = false): number {
         if (bias) return Math.abs(Math.random() - Math.random()) * (1 + max - min) + min
-        return ((Math.random() * (max - min)) + min).toFixed(places);
+        return (Math.random() * (max - min)) + min
     }
 
-    item(arr: Array<any> = []) {
+    /**
+    * Get a random item in an array.
+    * @method
+    * @param {Array<any>} arr - The array to use.
+    * @returns {any} A random item in arr.
+    */
+    public item(arr: Array<any>): any {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    bool() {
+    /**
+    * Get a random boolean.
+    * @method
+    * @returns {boolean} Either False or True.
+    */
+    public bool(): boolean {
         return Math.random() >= 0.5;
-    }
-
-    key(obj: Object = {}) {
-        const keys = Object.keys(obj);
-        return keys[Math.floor(Math.random() * keys.length)];
-    }
-
-    prop(obj: Object = {}) {
-        const keys = Object.keys(obj);
-        return obj[keys[Math.floor(Math.random() * keys.length)]];
     }
 }
