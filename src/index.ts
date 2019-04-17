@@ -25,20 +25,22 @@
  */
 
 export class Flut {
-    int(min?: number, max?: number) {
+    int(min?: number, max?: number, bias: boolean = false) {
         if (max === void 0) { max = min; }
         if (min === void 0) { min = 0; }
-	    return Math.floor((Math.random() * (max - min + 1)) + min);
+        if (bias) return Math.floor(Math.abs(Math.random() - Math.random()) * (1 + max - min) + min)
+        return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 
-    dec(min?: number, max?: number, places: number = 15) {
+    dec(min?: number, max?: number, places: number = 15, bias: boolean = false) {
         if (max === void 0) { max = min; }
         if (min === void 0) { min = 0; }
-	    return ((Math.random() * (max - min)) + min).toFixed(places);
+        if (bias) return Math.abs(Math.random() - Math.random()) * (1 + max - min) + min
+        return ((Math.random() * (max - min)) + min).toFixed(places);
     }
 
     item(arr: Array<any> = []) {
-	    return arr[Math.floor(Math.random() * arr.length)];
+        return arr[Math.floor(Math.random() * arr.length)];
     }
 
     bool() {
@@ -47,11 +49,11 @@ export class Flut {
 
     key(obj: Object = {}) {
         const keys = Object.keys(obj);
-	    return keys[Math.floor(Math.random() * keys.length)];
+        return keys[Math.floor(Math.random() * keys.length)];
     }
 
     prop(obj: Object = {}) {
         const keys = Object.keys(obj);
-	    return obj[keys[Math.floor(Math.random() * keys.length)]];
+        return obj[keys[Math.floor(Math.random() * keys.length)]];
     }
 }
