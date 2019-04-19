@@ -18,7 +18,7 @@ const Flut = require("flut")
 From your web application:
 
 ```html
-<script src="https://unpkg.com/flut/dist/flut.min.js"></script>
+<script src="https://unpkg.com/flut/dist/index.min.js"></script>
 ```
 
 ## Initialisation
